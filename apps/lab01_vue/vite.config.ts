@@ -11,6 +11,7 @@ export default defineConfig({
     vue(),
     legacy()
   ],
+  base: './',
   build: {
     outDir: path.resolve(__dirname, '../../docs/lab01_vue'),
     emptyOutDir: true

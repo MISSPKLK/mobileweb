@@ -11,6 +11,7 @@ export default defineConfig({
     react(),
     legacy()
   ],
+  base: './',
    build: {
     outDir: path.resolve(__dirname, '../../docs/lab01_react'),
     emptyOutDir: true
