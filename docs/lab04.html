@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab04 Iconic Vue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Reset & Basic Setup --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #f0f0f0;
+            font-family: 'Kanit', sans-serif;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* --- Animation Background --- */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 123, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: drift 60s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+            /* แก้ให้ไปอยู่ข้างหลังสุด */
+        }
+
+        @keyframes drift {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 40px 20px 80px;
+            max-width: 1200px;
+            /* จำกัดความกว้างรวมไม่ให้กว้างเกินไปจนดูรก */
+            margin: 0 auto;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 50px;
+            position: relative;
+            /* แก้ไขการจัดตำแหน่ง Title */
+            display: block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #007bff, #00d4ff);
+            border-radius: 2px;
+        }
+
+        /* --- Gallery Section (แก้ไขจุดที่เบี้ยว) --- */
+        .gallery-container {
+            display: grid;
+            /* เปลี่ยนเป็น Grid */
+            grid-template-columns: repeat(4, 1fr);
+            /* บังคับแบ่ง 4 ช่องเท่ากัน (เลข 4 คือจำนวนรูปต่อแถว) */
+            gap: 20px;
+
+            /* ค่าเดิมที่ต้องคงไว้ */
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .img-wrapper {
+            width: 120%;
+            gap: 70px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeInUp 0.6s ease backwards;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .img-wrapper:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .img-wrapper:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .img-wrapper:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .img-wrapper:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .img-wrapper:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 123, 255, 0.3);
+            border-color: rgba(0, 123, 255, 0.4);
+            z-index: 10;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .img-wrapper:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        /* --- Download Section --- */
+        .download-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeInUp 0.8s ease 0.5s backwards;
+        }
+
+        .btn-download {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-download:hover {
+            background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(0, 123, 255, 0.6);
+        }
+
+        .btn-download:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(0, 123, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #00d4ff;
+            margin-top: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                margin-bottom: 40px;
+            }
+
+            .download-section {
+                padding: 40px 20px;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+ 
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <h1>ตัวอย่างหน้าจอแอปพลิเคชัน</h1>
+        </div>
+
+        <div class="section-title">App Preview</div>
+
+        <div class="gallery-container">
+            <div class="img-wrapper">
+                <img src="./lab04_2.png" alt="App Screen 1" class="gallery-img" width="120%">
+            </div>
+            <div class="img-wrapper">
+                <img src="./lab04_preview.png" alt="App Screen 2" class="gallery-img">
+            </div>
+            
+            <div class="img-wrapper">
+                <img src="./lab04_4.png" alt="App Screen 4" class="gallery-img">
+                
+            </div>
+
+            <div class="img-wrapper">
+                <img src="./lab04_3.png" alt="App Screen 3" class="gallery-img">
+            </div>
+        </div>
+
+        <div class="download-section">
+            <div class="section-title" style="margin-bottom: 30px;">ดาวน์โหลดแอปพลิเคชัน</div>
+
+            <a href="https://drive.google.com/file/d/1EOMciUKoPh9e8vvlI2uUD6nWoVtOOQF-/view?usp=drive_link"
+                class="btn-download">
+                <span class="download-icon">📱</span>
+                Download APK
+            </a>
+
+            <div>
+                <div class="badge">Android Only</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

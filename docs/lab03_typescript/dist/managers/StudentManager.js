@@ -12,17 +12,11 @@ export class StudentManager {
     findStudentByID(id) {
         return this.students.find(s => s.id === id);
     }
-    // 1. แก้ไขให้ค้นหาจาก first_name หรือ last_name
     findStudentsByName(name) {
-        return this.students.filter(s => s.first_name.toLowerCase().includes(name.toLowerCase()) ||
-            s.last_name.toLowerCase().includes(name.toLowerCase()));
+        return this.students.filter(s => s.name.toLowerCase().includes(name.toLowerCase()));
     }
     findStudentsByMajor(major) {
         return this.students.filter(s => s.major.toLowerCase().includes(major.toLowerCase()));
-    }
-    // 2. เพิ่มฟังก์ชันค้นหาด้วย email
-    findStudentByEmail(email) {
-        return this.students.find(s => s.email === email);
     }
     saveToLocalStorage() {
         localStorage.setItem("students", JSON.stringify(this.students));
