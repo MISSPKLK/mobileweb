@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab05 Iconic Vue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Reset & Basic Setup --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* พื้นหลังสีชมพูไล่เฉดหวานๆ เหมือนเดิม */
+            background: linear-gradient(180deg, #fff0f5 0%, #ffe4e1 50%, #ffc0cb 100%);
+            color: #4a4a4a; /* สีเทาเข้มเพื่อความสุภาพและอ่านง่าย */
+            font-family: 'Kanit', sans-serif; /* ฟอนต์กึ่งทางการ ทันสมัย */
+            font-weight: 300;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* --- Background Animation (Soft Particles) --- */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(255, 182, 193, 0.4) 0%, transparent 25%),
+                radial-gradient(circle at 85% 75%, rgba(255, 105, 180, 0.25) 0%, transparent 25%);
+            animation: floatBubble 12s ease-in-out infinite alternate;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes floatBubble {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-30px); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 60px 20px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-section h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600; /* หนาปานกลาง ดูทางการขึ้น */
+            margin-bottom: 10px;
+            color: #d63384; /* ชมพูเข้ม แบบ Professional */
+            letter-spacing: 1px;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            color: #777;
+            font-weight: 400;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 500;
+            margin-bottom: 60px;
+            position: relative;
+            color: #d63384;
+            display: block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #ffb6c1;
+            border-radius: 2px;
+        }
+
+        /* --- Gallery Section (Polaroid Style Clean) --- */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 80px;
+            perspective: 1000px;
+        }
+
+        .img-wrapper {
+            background-color: #fff;
+            padding: 12px 12px 50px 12px;
+            border-radius: 4px; /* มุมมนน้อยลง ให้ดูเรียบร้อยขึ้น */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            width: 240px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* เอียงเล็กน้อยพองาม */
+        .img-wrapper:nth-child(odd) { transform: rotate(-2deg); }
+        .img-wrapper:nth-child(even) { transform: rotate(2deg) translateY(20px); }
+
+        .img-wrapper:hover {
+            transform: rotate(0deg) scale(1.05) translateY(-10px);
+            box-shadow: 0 15px 30px rgba(214, 51, 132, 0.2);
+            z-index: 10;
+        }
+
+        /* เปลี่ยนจากเทป เป็นหมุดหรือคลิปหนีบ (Optional) หรือเอาออกให้ดู Clean */
+        /* เอาเทปออกเพื่อให้ดูทางการขึ้น */
+
+        .gallery-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #f0f0f0;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            font-weight: 400;
+        }
+
+        /* --- Download Section --- */
+        .download-section {
+            text-align: center;
+            padding: 60px 30px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .download-section h2 {
+            font-size: 1.5rem;
+            color: #d63384;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .btn-download {
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 45px;
+            /* สีชมพูไล่เฉดแบบเรียบหรู */
+            background: linear-gradient(135deg, #e83e8c 0%, #d63384 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px; /* มุมมนแบบมาตรฐานปุ่มแอป */
+            box-shadow: 0 4px 15px rgba(214, 51, 132, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(214, 51, 132, 0.4);
+            background: linear-gradient(135deg, #d63384 0%, #c2185b 100%);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(232, 62, 140, 0.1);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #d63384;
+            margin-top: 25px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            .img-wrapper {
+                width: 80%;
+                margin-top: 0 !important;
+                transform: rotate(0deg) !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <h1>Application Showcase</h1>
+            <p>ตัวอย่างหน้าจอแอปพลิเคชัน Lab 05</p>
+        </div>
+
+        <div class="section-title">Screen Previews</div>
+
+        <div class="gallery-container">
+            <div class="img-wrapper">
+                <img src="lab5_1.png" alt="Login Screen" class="gallery-img">
+                <div class="caption">Login Interface</div>
+            </div>
+            
+            <div class="img-wrapper">
+                <img src="lab5_2.png" alt="Home Screen" class="gallery-img">
+                <div class="caption">Dashboard</div>
+            </div>
+            
+            <div class="img-wrapper">
+                <img src="lab5_3.png" alt="Settings Screen" class="gallery-img">
+                <div class="caption">Settings Menu</div>
+            </div>
+
+          
+        </div>
+
+        <div class="download-section">
+            <h2>ดาวน์โหลดแอปพลิเคชัน</h2>
+            <a href="https://drive.google.com/drive/u/0/folders/13Wpd7r_wncBavBl1WLxy6UyMErs6es5M"
+                class="btn-download">
+                Download APK
+            </a>
+            <div>
+                <div class="badge">Supports Android Devices</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
