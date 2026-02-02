@@ -3,155 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ผลงาน ภัทธิญาภรณ์ แก่นจันทร์</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
+    <title>Portfolio | ภัทธิญาภรณ์ แก่นจันทร์</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Palette ใหม่ของคุณ */
+            --color-blue-deep: #2B3499;   /* น้ำเงินหลัก */
+            --color-orange-vivid: #FF6C22; /* ส้มสด (เน้น) */
+            --color-orange-light: #FF9209; /* ส้มทอง (ไล่สี) */
+            --color-cream: #FFD099;       /* ครีมนวล (พื้นหลังอ่อน/ตัวหนังสือ) */
+
+            /* Gradients */
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #fff4e6 100%);
+            --header-gradient: linear-gradient(135deg, #2B3499 0%, #1a216e 100%);
+            --orange-gradient: linear-gradient(45deg, #FF6C22 0%, #FF9209 100%);
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: var(--bg-gradient);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, h4, h5, .font-heading {
+            font-family: 'Kanit', sans-serif;
+        }
+
+        /* --- Header --- */
+        header {
+            background: var(--header-gradient);
+            color: white;
+            padding: 60px 0 80px;
+            border-bottom-right-radius: 80px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(43, 52, 153, 0.3);
+        }
+
+        /* ตกแต่งฉากหลัง Header ด้วยวงกลมสีส้มจางๆ */
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: var(--color-orange-vivid);
+            opacity: 0.2;
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .student-card-header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 208, 153, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--color-cream);
+        }
+
+        /* --- Content & Cards --- */
+        .main-container {
+            margin-top: -50px; /* ดึงเนื้อหาขึ้น */
+            margin-bottom: 50px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(255, 108, 34, 0.2); /* เงาสีส้ม */
+        }
+
+        /* แถบสีด้านซ้ายการ์ด */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--orange-gradient);
+        }
+
+        .card-body {
+            padding: 2rem;
+            margin-left: 5px;
+        }
+
+        .week-badge {
+            background-color: var(--color-cream);
+            color: var(--color-blue-deep);
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            color: var(--color-blue-deep);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .text-desc {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- Buttons --- */
+        .btn-action {
+            background: var(--orange-gradient);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s;
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+
+        .btn-action:hover {
+            background: linear-gradient(45deg, #FF9209 0%, #FF6C22 100%); /* สลับสีตอน Hover */
+            color: white;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(255, 108, 34, 0.4);
+        }
+
+        .btn-group-gap {
+            gap: 10px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: auto;
+            background-color: var(--color-blue-deep);
+            color: var(--color-cream);
+            padding: 30px 0;
+            text-align: center;
+            border-top-left-radius: 50px;
+        }
+
+    </style>
 </head>
 <body>
-    <header class="text-center py-4">
-        <h3>รายวิชา Mobile Web Application Development</h3>
-        <p>ภาคการศึกษา 2/2568</p>
-        <p>
-            <strong>ชื่อ-สกุล นักศึกษา: </strong>
-            นางสาวภัทธิญาภรณ์ แก่นจันทร์
-        </p>
-        <p>
-            <strong>รหัสนักศึกษา: </strong>
-            673380502-0
-        </p>
-    </header>
 
-    <main class="container mt-4">
-        <h4 class="mb-4 text-primary">สรุปผลงานการฝึกปฏิบัติรายสัปดาห์</h4>
+<header class="text-center">
+    <div class="container">
+        <h5 class="text-uppercase mb-2" style="color: var(--color-orange-light); letter-spacing: 2px;">Portfolio</h5>
+        <h2 class="display-5 fw-bold mb-3 text-white">Mobile Web Application</h2>
         
-        <div class="row g-4">
-            <!-- Week 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="week-title text-primary">
-                            Week 1: การเตรียม Workspace
-                        </h5>
-                        <p>
-                            ติดตั้งเครื่องมือที่จำเป็นสำหรับฝึกปฏิบัติการในรายวิชา
-                            ทดลองสร้าง ionic-vue และ ionic-project
-                        </p>
-                        <a
-                            href="./lab01_vue/index.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >Lab01_Vue</a>
-                        <a
-                            href="./lab01_react/index.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >Lab01_React</a>
-                        <br>
-                        <small class="text-muted">วันที่ส่งผลงาน: 24 พฤศจิกายน 2568</small>
-                    </div>
+        <div class="student-card-header">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-auto">
+                    <i class="fas fa-user-astronaut fa-2x"></i>
+                </div>
+                <div class="col text-start border-start border-warning ps-3">
+                    <p class="mb-0 fw-bold fs-5">นางสาวภัทธิญาภรณ์ แก่นจันทร์</p>
+                    <p class="mb-0 small opacity-75">รหัสนักศึกษา: 673380502-0</p>
                 </div>
             </div>
-
-            <!-- Week 2 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 2: HTML5 & CSS3</h5>
-                        <p>การสร้างโครงร่างและออกแบบหน้าเว็บด้วย HTML5 และ CSS3</p>
-                        <a
-                            href="./lab02_guide/index.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >ดูผลงาน</a>
-                        <br>
-                        <small class="text-muted">วันที่ส่งผลงาน: 7 ธันวาคม 2568 </small>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">
-                            Week 3: JavaScript & TypeScript
-                        </h5>
-                        <p>การเขียน JavaScript และ TypeScript</p>
-                        <a
-                            href="./lab03_typescript/index.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >ดูผลงาน</a>
-                        <br>
-                        <small class="text-muted">วันที่ส่งผลงาน: 8 ธันวาคม 2568</small>
-                    </div>
-                </div>
-            </div>
-
-             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">
-                            Week 4: Ionic Vue
-                        </h5>
-                        <p>Ionic Vue</p>
-                        <a
-                            href="./lab04.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >ดูผลงาน</a>
-                        <br>
-                        <small class="text-muted">วันที่ส่งผลงาน: 5 มกราคม 2569</small>
-                    </div>
-                </div>
-            </div>
-
-              <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">
-                            Week 5: Ionic React
-                        </h5>
-                        <p>Ionic React</p>
-                        <a
-                            href="./lab05.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >ดูผลงาน</a>
-                        <br>
-                        <small class="text-muted">วันที่ส่งผลงาน: 12 มกราคม 2569</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">
-                            Week 6: Ionic Firebase
-                        </h5>
-                        <p>Ionic Firebase</p>
-                        <a
-                            href="./lab06-expense/index.html"
-                            class="btn btn-primary mb-2"
-                            target="_blank"
-                        >ดูผลงาน</a>
-                        <br>
-                        <small class="text-muted">วันที่ส่งผลงาน: 2 กุมภาพันธ์ 2569</small>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
-    </main>
+    </div>
+</header>
 
-    <footer class="text-center mt-5 mb-3">
-        <p>
-            © 2025 Mobile Web Application Development — College of Computing, Khon Kaen University
-        </p>
-    </footer>
+<main class="container main-container">
+    <div class="row g-4">
+        
+        <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body d-flex flex-column">
+                    <div>
+                        <span class="week-badge">Week 1</span>
+                        <h4 class="card-title">การเตรียม Workspace</h4>
+                        <p class="text-desc">ติดตั้งเครื่องมือและสร้างโปรเจกต์เริ่มต้น Ionic Vue และ React</p>
+                    </div>
+                    <div class="mt-auto d-flex btn-group-gap">
+                        <a href="./lab01_vue/index.html" class="btn btn-action flex-fill" target="_blank">
+                            <i class="fab fa-vuejs"></i> Vue
+                        </a>
+                        <a href="./lab01_react/index.html" class="btn btn-action flex-fill" target="_blank">
+                            <i class="fab fa-react"></i> React
+                        </a>
+                    </div>
+                    <small class="text-muted text-end d-block mt-3">24 พ.ย. 2568</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body d-flex flex-column">
+                    <div>
+                        <span class="week-badge">Week 2</span>
+                        <h4 class="card-title">HTML5 & CSS3</h4>
+                        <p class="text-desc">การสร้างโครงร่างและออกแบบหน้าเว็บด้วย HTML5 และ CSS3</p>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="./lab02_guide/index.html" class="btn btn-action" target="_blank">
+                            <i class="fas fa-eye me-2"></i> ดูผลงาน
+                        </a>
+                        <small class="text-muted text-end d-block mt-3">7 ธ.ค. 2568</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body d-flex flex-column">
+                    <div>
+                        <span class="week-badge">Week 3</span>
+                        <h4 class="card-title">JS & TypeScript</h4>
+                        <p class="text-desc">พื้นฐาน JavaScript และการเขียน TypeScript</p>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="./lab03_typescript/index.html" class="btn btn-action" target="_blank">
+                            <i class="fas fa-code me-2"></i> ดูผลงาน
+                        </a>
+                        <small class="text-muted text-end d-block mt-3">8 ธ.ค. 2568</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body d-flex flex-column">
+                    <div>
+                        <span class="week-badge">Week 4</span>
+                        <h4 class="card-title">Ionic Vue</h4>
+                        <p class="text-desc">สร้าง Mobile App ด้วย Ionic Framework และ Vue.js</p>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="./lab04.html" class="btn btn-action" target="_blank">
+                            <i class="fas fa-mobile-alt me-2"></i> ดูผลงาน
+                        </a>
+                        <small class="text-muted text-end d-block mt-3">5 ม.ค. 2569</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body d-flex flex-column">
+                    <div>
+                        <span class="week-badge">Week 5</span>
+                        <h4 class="card-title">Ionic React</h4>
+                        <p class="text-desc">สร้าง Mobile App ด้วย Ionic React Components</p>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="./lab05.html" class="btn btn-action" target="_blank">
+                            <i class="fab fa-react me-2"></i> ดูผลงาน
+                        </a>
+                        <small class="text-muted text-end d-block mt-3">12 ม.ค. 2569</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body d-flex flex-column">
+                    <div>
+                        <span class="week-badge">Week 6</span>
+                        <h4 class="card-title">Ionic Firebase</h4>
+                        <p class="text-desc">เชื่อมต่อ Backend และฐานข้อมูลด้วย Firebase</p>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="./lab06-expense/index.html" class="btn btn-action" target="_blank">
+                            <i class="fas fa-fire me-2"></i> ดูผลงาน
+                        </a>
+                        <small class="text-muted text-end d-block mt-3">2 ก.พ. 2569</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p class="mb-1 fw-bold">College of Computing, KKU</p>
+        <p class="small opacity-75 mb-0">© 2025 Mobile Web Application Development</p>
+    </div>
+</footer>
+
 </body>
 </html>
