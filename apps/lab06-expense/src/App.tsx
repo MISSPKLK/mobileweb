@@ -30,7 +30,7 @@ const App: React.FC = () => (
     {/* 1. ถ้า Build ลง GitHub Pages ให้ใส่ชื่อ Repo เช่น basename="/my-money-app" 
       2. ถ้าแค่อยากให้รันในโฟลเดอร์ 'docs' ให้ใส่ basename="/docs"
     */}
-    <IonReactRouter basename="/docs/lab06-expense"> 
+    <IonReactRouter basename="/mobileweb/lab06-expense"> 
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/tab1">
