@@ -18,7 +18,7 @@ import AddExpense from './pages/AddExpense';
 import Tab3 from './pages/Tab3';
 import EditExpense from './pages/EditExpense';
 
-/* Core CSS required for Ionic components to work properly */
+/* Core CSS */
 import '@ionic/react/css/core.css';
 import '@ionic/react/css/structure.css';
 import '@ionic/react/css/typography.css';
@@ -27,7 +27,10 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
+    {/* 1. ถ้า Build ลง GitHub Pages ให้ใส่ชื่อ Repo เช่น basename="/my-money-app" 
+      2. ถ้าแค่อยากให้รันในโฟลเดอร์ 'docs' ให้ใส่ basename="/docs"
+    */}
+    <IonReactRouter basename="/docs/lab06-expense"> 
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/tab1">
@@ -46,7 +49,6 @@ const App: React.FC = () => (
             <EditExpense />
           </Route>
           
-          {/* ย้าย Redirect ไว้ท้ายสุด */}
           <Route exact path="/">
             <Redirect to="/tab1" />
           </Route>
