@@ -9,7 +9,7 @@ import {
   IonTabs,
   setupIonicReact
 } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
+import { HashRouter } from 'react-router-dom';
 import { list, add, settings } from 'ionicons/icons'; // 1. เพิ่ม import icon 'add'
 
 // Import หน้าต่างๆ
@@ -29,13 +29,13 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
+    <HashRouter>
       <IonTabs>
         <IonRouterOutlet>
           <Route path="/edit/:id">
             <EditExpense />
           </Route>
-          
+
           <Route exact path="/tab1">
             <Tab1 />
           </Route>
@@ -71,7 +71,7 @@ const App: React.FC = () => (
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
-    </IonReactRouter>
+    </HashRouter>
   </IonApp>
 );
 
