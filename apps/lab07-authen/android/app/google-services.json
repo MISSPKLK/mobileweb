@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "69753187119",
+    "project_id": "lab06-ionic-firebase",
+    "storage_bucket": "lab06-ionic-firebase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69753187119:android:d1e72bb7dfcc646ec68fda",
+        "android_client_info": {
+          "package_name": "cpkku.phatti.lab07"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69753187119-sm1pooreqr0pmhb5d5sv1f29lsft990r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cpkku.phatti.lab07",
+            "certificate_hash": "2dfe72c03dd849054c31caa19335e099ad62f780"
+          }
+        },
+        {
+          "client_id": "69753187119-5atcvtejbf8t0se6u5sq23jdfokrst9v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYH3pWSREOPH25hNt31GvMHj48eL6w64Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69753187119-5atcvtejbf8t0se6u5sq23jdfokrst9v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
