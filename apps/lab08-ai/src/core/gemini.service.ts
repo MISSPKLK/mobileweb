@@ -2,13 +2,12 @@ import { GoogleGenerativeAI, SchemaType } from "@google/generative-ai";
 import type { Base64Image, ImageAnalysisResult } from "./ai.interface";
 
 
-const API_KEY = "AIzaSyAq-w__1EdEW0GGuZD-07qD6gF-dp1XWmI"; 
+const API_KEY = "AIzaSyAY0_d7nswaosa7yt9VA2aYuPzM-14U1JE"; 
 
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 
 
-// 2. กำหนด Schema ให้ตรงกับ Library ตัวใหม่
 const schema = {
   type: SchemaType.OBJECT,
   properties: {

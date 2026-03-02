@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">lab09-sensors</string>
+    <string name="title_activity_main">lab09-sensors</string>
+    <string name="package_name">cpkku.phatti.lab09</string>
+    <string name="custom_url_scheme">cpkku.phatti.lab09</string>
+</resources>

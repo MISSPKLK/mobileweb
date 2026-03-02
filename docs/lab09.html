@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab09: Ionic + Mobile Phone Sensors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="lab09css.css">
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="hero">
+    <p class="hero-eyebrow">Mobile Application Development · Lab 09</p>
+    <h1 class="hero-title">Ionic + Mobile<br><span>Phone Sensors</span></h1>
+    <p class="hero-subtitle">Arm Workout Tracker Application</p>
+    <div class="ornament">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line r"></div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Info Card -->
+    <div class="info-card">
+        <div class="info-top">
+            <div class="info-item">
+                <label>Application</label>
+                <p>Arm Workout Tracker</p>
+            </div>
+            <div class="info-item">
+                <label>รหัสนักศึกษา</label>
+                <p>673380502-0</p>
+            </div>
+            <div class="info-item">
+                <label>ชื่อ–สกุล</label>
+                <p>นางสาวภัทธิญาภรณ์ แก่นจันทร์</p>
+            </div>
+        </div>
+        <div class="github-banner">
+            <div class="github-left">
+                <div class="github-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </div>
+                <div class="github-meta">
+                    <span>Source Code</span>
+                    <strong>MISSPKLK / mobileweb</strong>
+                </div>
+            </div>
+            <a href="https://github.com/MISSPKLK/mobileweb" target="_blank" class="github-btn">
+                <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                View Repository
+            </a>
+        </div>
+    </div>
+
+    <!-- Screenshots -->
+    <section style="opacity:0;animation:fadeUp 0.8s ease forwards 1s">
+        <div class="section-header">
+            <span class="section-num">01</span>
+            <h2 class="section-title">ภาพตัวอย่างหน้าจอ Android</h2>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="gallery-frame">
+                    <div class="gallery-img-wrap">
+                        <img src="images/lab09-start.jpg" alt="หน้าเริ่มแอป">
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-label">Screen A</span>
+                        <p>หน้าเริ่มต้นแอปพลิเคชัน</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-frame">
+                    <div class="gallery-img-wrap">
+                        <img src="images/lab09-counting.jpg" alt="ขณะกำลังนับ">
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-label">Screen B</span>
+                        <p>ขณะกำลังนับรอบ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-frame">
+                    <div class="gallery-img-wrap">
+                        <img src="images/lab09-stats.jpg" alt="หน้าแสดงสถิติ">
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-label">Screen C</span>
+                        <p>หน้าแสดงสถิติเมื่อจบการทำกายบริหาร</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video -->
+    <section class="video-section" style="opacity:0;animation:fadeUp 0.8s ease forwards 1.1s">
+        <div class="section-header">
+            <span class="section-num">02</span>
+            <h2 class="section-title">วิดีโอสาธิตการใช้งาน</h2>
+        </div>
+
+        <div class="video-wrap">
+            <video controls>
+                <source src="test2.mp4" type="video/mp4">
+                เบราว์เซอร์ของคุณไม่รองรับการแสดงผลวิดีโอ
+            </video>
+            <div class="video-note">
+                สาธิตการกด Start · เสียงแนะนำ · การนับรอบเมื่อยกแขนขึ้นลง
+            </div>
+        </div>
+    </section>
+
+    <!-- QA -->
+    <section class="qa-section" style="opacity:0;animation:fadeUp 0.8s ease forwards 1.2s">
+        <div class="section-header">
+            <span class="section-num">03</span>
+            <h2 class="section-title">ตอบคำถามท้ายแบบฝึกหัด</h2>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-question">
+                <div class="qa-icon">a</div>
+                <h3>นักศึกษาใช้ AI ช่วยส่วนไหนบ้าง ตอบตามความเป็นจริง</h3>
+            </div>
+            <div class="qa-answer">
+                ใช้ AI ช่วยในการ Refactor โค้ดในส่วนของ <code>ArmWorkoutEngine.ts</code> เพื่อแยก Logic การนับรอบ (Algorithm แบบ Rule-based) ออกจาก UI ให้เป็นไปตามหลัก Modular design อย่างถูกต้องตามโจทย์ รวมถึงช่วยแนะนำวิธีการเรียกใช้ TTS และ Haptics ผ่าน Engine
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-question">
+                <div class="qa-icon">b</div>
+                <h3>ส่วนใดบ้างที่นักศึกษาปรับแก้ไขเอง</h3>
+            </div>
+            <div class="qa-answer">
+                ทำการ Build ลงอุปกรณ์ Android จริงและทดสอบเพื่อปรับจูนค่า Threshold เช่น ค่าพารามิเตอร์ <code>UP_TH</code>, <code>DOWN_TH</code>, <code>MIN_MS</code>, <code>MAX_MS</code> ของเซ็นเซอร์ให้เหมาะสมกับการยกแขนในชีวิตจริง ปรับแต่ง CSS และสีสันของ UI เพิ่มเติม และเป็นผู้ทดสอบและบันทึกวิดีโอสาธิตการทำงานจริงด้วยตนเอง
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-ornament">
+            <div class="footer-line"></div>
+            <div class="footer-dot"></div>
+            <div class="footer-line r"></div>
+        </div>
+        <p>Lab 09 · Ionic + Mobile Phone Sensors</p>
+        <p>minikiss</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
